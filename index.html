@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cien Páginas - Kit Creativo de Cuadernos Pequeños</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Design Tokens and Palette */
+    :root {
+      --color-azul-oscuro: #2B5B84;
+      --color-crema-calido: #FAF6F0;
+      --color-verde-menta: #7BC6A4;
+      --color-ambar-naranja: #F4A261;
+      --color-ambar-hover: #E08F4E;
+      --color-texto-negro: #1A1A1A;
+      --color-blanco: #FFFFFF;
+      --font-heading: 'Fredoka', cursive, sans-serif;
+      --font-body: 'Nunito', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-texto-negro);
+      background-color: var(--color-crema-calido);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: var(--font-heading);
+      line-height: 1.25;
+    }
+
+    /* Container Utility */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Standardized Call to Action Button */
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-ambar-naranja);
+      color: var(--color-blanco);
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 18px 36px;
+      border-radius: 50px;
+      box-shadow: 0 8px 20px rgba(244, 162, 97, 0.4), 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .btn-cta:hover {
+      background-color: var(--color-ambar-hover);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(244, 162, 97, 0.5), 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-cta:active {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    /* Utility Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    .img-fluid {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+    }
+
+    .img-card {
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border: 4px solid var(--color-blanco);
+      object-fit: cover;
+    }
+
+    /* Section Specific Styles */
+    .sec-1 {
+      background-color: var(--color-azul-oscuro);
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .logo-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid var(--color-crema-calido);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+      object-fit: cover;
+      margin: 0 auto;
+    }
+
+    .sec-2 {
+      background-color: var(--color-azul-oscuro);
+      padding: 10px 20px 40px 20px;
+      color: var(--color-crema-calido);
+      text-align: center;
+    }
+
+    .sec-2 h1 {
+      font-size: 1.6rem;
+      max-width: 900px;
+      margin: 0 auto;
+      font-weight: 700;
+    }
+
+    @media (min-width: 768px) {
+      .sec-2 h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    .sec-3 {
+      background-color: var(--color-crema-calido);
+      padding: 60px 20px;
+    }
+
+    .sec-3-title {
+      color: var(--color-azul-oscuro);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .sec-3-text p {
+      margin-bottom: 15px;
+      color: #333333;
+      font-size: 1.05rem;
+    }
+
+    .sec-4 {
+      background-color: var(--color-verde-menta);
+      padding: 60px 20px;
+    }
+
+    .objection-block {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .objection-title {
+      color: var(--color-azul-oscuro);
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .objection-text {
+      color: var(--color-texto-negro);
+      text-align: left;
+      font-size: 1rem;
+    }
+
+    .sec-5, .sec-8, .sec-13 {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .sec-5 {
+      background-color: var(--color-verde-menta);
+      padding-top: 10px;
+    }
+
+    .sec-6 {
+      background-color: var(--color-crema-calido);
+      padding: 60px 20px 20px 20px;
+      text-align: center;
+    }
+
+    .sec-6 h2 {
+      color: var(--color-azul-oscuro);
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    .sec-7 {
+      background-color: var(--color-crema-calido);
+      padding: 20px 20px 40px 20px;
+    }
+
+    .offer-card {
+      background-color: var(--color-blanco);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 2px solid #EAE3D9;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .offer-list {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+
+    .offer-list li {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      color: var(--color-texto-negro);
+    }
+
+    .offer-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--color-verde-menta);
+      font-weight: 900;
+      font-size: 1.3rem;
+    }
+
+    .value-tag {
+      color: #777777;
+      font-size: 0.95rem;
+    }
+
+    .pricing-box {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 2px dashed #EAE3D9;
+    }
+
+    .price-total {
+      font-size: 1.1rem;
+      color: #666666;
+      text-decoration: line-through;
+      margin-bottom: 5px;
+    }
+
+    .price-launch {
+      font-size: 1.8rem;
+      color: var(--color-azul-oscuro);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      background-color: #FEF3C7;
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .urgency-tag {
+      color: #DC2626;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .sec-8 {
+      background-color: var(--color-crema-calido);
+      padding-top: 0;
+    }
+
+    .sec-9 {
+      background-color: var(--color-azul-oscuro);
+      padding: 50px 20px 20px 20px;
+      text-align: center;
+      color: var(--color-crema-calido);
+    }
+
+    .sec-9 h2 {
+      font-size: 2.2rem;
+    }
+
+    .sec-10 {
+      background-color: var(--color-azul-oscuro);
+      padding: 20px 20px 60px 20px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial-img:hover {
+      transform: translateY(-50px);
+    }
+
+    .sec-11 {
+      background-color: var(--color-crema-calido);
+      padding: 60px 20px;
+    }
+
+    .sec-11 h2 {
+      color: var(--color-azul-oscuro);
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 35px;
+    }
+
+    .faq-accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background-color: var(--color-blanco);
+      border-radius: 14px;
+      margin-bottom: 16px;
+      border: 1px solid #EAE3D9;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .faq-summary {
+      padding: 20px;
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--color-azul-oscuro);
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      list-style: none;
+    }
+
+    .faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-summary::after {
+      content: "\f078";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: var(--color-ambar-naranja);
+      transition: transform 0.3s ease;
+      margin-left: 10px;
+    }
+
+    details[open] .faq-summary::after {
+      transform: rotate(180deg);
+    }
+
+    .faq-content {
+      padding: 0 20px 20px 20px;
+      color: #444444;
+      font-size: 1rem;
+      border-top: 1px solid #FAF6F0;
+      padding-top: 15px;
+    }
+
+    .sec-12 {
+      background-color: var(--color-verde-menta);
+      padding: 60px 20px;
+    }
+
+    .guarantee-box {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .sec-12 h3 {
+      color: var(--color-azul-oscuro);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .sec-12 p {
+      color: var(--color-azul-oscuro);
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .sec-13 {
+      background-color: var(--color-verde-menta);
+      padding-top: 10px;
+      padding-bottom: 60px;
+    }
+
+    .footer-text {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.85rem;
+      margin-top: 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECCIÓN 1: Logotipo -->
+  <header class="sec-1">
+    <div class="container">
+      <img 
+        src="https://raw.githubusercontent.com/cienpaginas/cuadernos/main/Logotipo.jpg" 
+        alt="Cien Páginas Logotipo" 
+        class="logo-img"
+        onerror="this.onerror=null; this.src='https://placehold.co/100x100/2B5B84/FAF6F0?text=Cien+P%C3%A1ginas';"
+      />
+    </div>
+  </header>
+
+  <!-- SECCIÓN 2: Gran Promesa -->
+  <section class="sec-2">
+    <div class="container">
+      <h1>Dejarán las pantallas en menos de 24 horas: Descubre cómo lograr que tus hijos pasen de aburrirse en casa a crear sus propias historias escritas hoy mismo</h1>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: Presentación del Problema y Solución -->
+  <section class="sec-3">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <img 
+            src="https://raw.githubusercontent.com/cienpaginas/cuadernos/main/Cuaderno1.jpg" 
+            alt="Cuadernos Cien Páginas" 
+            class="img-fluid img-card"
+            onerror="this.onerror=null; this.src='https://placehold.co/500x500/FAF6F0/2B5B84?text=Cuaderno+1';"
+          />
+        </div>
+        <div class="sec-3-text">
+          <h2 class="sec-3-title">¿Sientes que tus hijos pasan demasiado tiempo pegados al celular o la tablet porque no encuentran algo que realmente despierte su imaginación?</h2>
+          <p>Es agotador e incómodo querer incentivarles el hábito de escribir, dibujar y organizar sus ideas, solo para encontrarte con cuadernos aburridos, gigantes y pesados para sus manitas.</p>
+          <p>En Cien Páginas creamos el combo perfecto: cuadernos argollados compactos con papel resistente y espectaculares planchas de stickers ilustrados para que personalizar sus apuntes se convierta en su momento favorito del día.</p>
+          <p>Imagina a tu hijo soltando las pantallas de forma natural, concentrado y orgulloso de mostrarte sus creaciones.</p>
+          <p style="font-weight: 700; color: var(--color-azul-oscuro);">¡Haz clic abajo, elige tu kit temático y dale a tu hijo la herramienta de creatividad que se merece hoy mismo sin salir de casa!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: Manejo de Objeciones -->
+  <section class="sec-4">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <!-- Objeción 1 -->
+          <div class="objection-block">
+            <h3 class="objection-title">Tiempo de entrega y costos de flete</h3>
+            <p class="objection-text">Entendemos perfectamente cómo te sientes al querer comprar un detalle lindo y educativo para tus hijos y descubrir que el envío desde Bogotá vale casi lo mismo que el producto y tarda hasta 5 días en llegar. Muchas mamás en Siete Trojes y conjuntos residenciales de Funza sentían exactamente la misma frustración. Sin embargo, descubrieron que con nuestro servicio local express reciben sus pedidos el mismo día en la puerta de su casa, coordinando directamente por WhatsApp y con domicilio rápido a tarifa plana local.</p>
+          </div>
+
+          <!-- Objeción 2 -->
+          <div class="objection-block">
+            <h3 class="objection-title">Precio percibido vs. utilidad</h3>
+            <p class="objection-text">Sabemos que cuidar el presupuesto familiar es tu prioridad y podrías pensar que un cuaderno pequeño es solo un gasto escolar más. A muchas mamás de la comunidad les pasaba lo mismo, hasta que comprobaron que no están comprando solo hojas de papel, sino un Kit de Estimulación Creativa completo con planchas de stickers exclusivas. Al ver que sus hijos los usan a diario para dibujar, planificar y divertirse sanamente sin romper las hojas ni soltar el argollado, descubrieron que es la inversión en entretenimiento educativo más accesible y duradera del mercado.</p>
+          </div>
+
+          <!-- Objeción 3 -->
+          <div class="objection-block" style="margin-bottom: 0;">
+            <h3 class="objection-title">Durabilidad del producto frente al uso infantil</h3>
+            <p class="objection-text">Es normal temer que las pastas se doblen, el argollado se abra o que los stickers pierdan el pegante a los dos días. Entendemos tu prevención porque el mercado está lleno de papelería frágil. No obstante, las mamás que ya compraron en Cien Páginas comprobaron que nuestros cuadernos cuentan con argollado metálico reinforced y papel de alto gramaje resistente al rayado fuerte de los niños, garantizando que cada sticker se mantenga firme y cada página intacta.</p>
+          </div>
+        </div>
+
+        <div>
+          <img 
+            src="https://raw.githubusercontent.com/cienpaginas/cuadernos/main/Cuaderno2.jpg" 
+            alt="Niños disfrutando los cuadernos" 
+            class="img-fluid img-card"
+            onerror="this.onerror=null; this.src='https://placehold.co/500x600/7BC6A4/FFFFFF?text=Cuaderno+2';"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: Botón CTA 1 -->
+  <section class="sec-5">
+    <div class="container">
+      <a href="https://wa.link/ubh5qc" target="_blank" rel="noopener noreferrer" class="btn-cta">
+        <i class="fa-brands fa-whatsapp" style="margin-right: 10px; font-size: 1.5rem;"></i> ¡QUIERO MI KIT CREATIVO HOY!
+      </a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: Encabezado Stack de Valor -->
+  <section class="sec-6">
+    <div class="container">
+      <h2>LO QUE RECIBES HOY EN TU KIT CREATIVO "CIEN PÁGINAS":</h2>
+      <img 
+        src="https://raw.githubusercontent.com/cienpaginas/cuadernos/main/Cuaderno3.jpg" 
+        alt="Kit Creativo Cien Páginas Completo" 
+        class="img-fluid img-card" 
+        style="max-width: 550px; margin: 0 auto;"
+        onerror="this.onerror=null; this.src='https://placehold.co/550x400/FAF6F0/2B5B84?text=Kit+Completo';"
+      />
+    </div>
+  </section>
+
+  <!-- SECCIÓN 7: Detalle del Stack de Valor -->
+  <section class="sec-7">
+    <div class="container">
+      <div class="offer-card">
+        <ul class="offer-list">
+          <li>
+            <strong>2x Cuadernos Argollados Pequeños "Cien Páginas"</strong> (Formato compacto ideal para maletines y manos pequeñas, pasta dura resistente y hojas de alto gramaje que no se traspasan) <span class="value-tag">— Valor percibido: $28.000 COP</span>
+          </li>
+          <li>
+            <strong>BONO EXCLUSIVO #1: Plancha Extra de Stickers Temáticos Coleccionables (Edición Limitada)</strong> (Más de 30 stickers ilustrados para decorar pastas y apuntes) <span class="value-tag">— Valor percibido: $12.000 COP</span>
+          </li>
+          <li>
+            <strong>BONO EXCLUSIVO #2: Mini Guía Digital "Historias Pequeñas" (PDF)</strong> (Ideas y plantillas divertidas para incentivar el hábito del dibujo y la escritura en casa) <span class="value-tag">— Valor percibido: $15.000 COP</span>
+          </li>
+          <li>
+            <strong>BONO EXCLUSIVO #3: Envío Express Prioritario en Funza</strong> (Entrega garantizada el mismo día pidiendo antes de las 3:00 PM) <span class="value-tag">— Valor percibido: $10.000 COP</span>
+          </li>
+        </ul>
+
+        <div class="pricing-box">
+          <div class="price-total">💰 VALOR TOTAL DEL PACK: $65.000 COP</div>
+          <div class="price-launch">💥 HOY EN OFERTA DE LANZAMIENTO: $29.900 COP</div>
+          <div class="urgency-tag">(Solo 25 kits disponibles para entrega el día de hoy)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 8: Botón CTA 2 -->
+  <section class="sec-8">
+    <div class="container">
+      <a href="https://wa.link/ubh5qc" target="_blank" rel="noopener noreferrer" class="btn-cta">
+        <i class="fa-brands fa-whatsapp" style="margin-right: 10px; font-size: 1.5rem;"></i> ¡QUIERO MI KIT CREATIVO HOY!
+      </a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 9: Título Testimonios -->
+  <section class="sec-9">
+    <div class="container">
+      <h2>Testimonios</h2>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 10: Galería Testimonios -->
+  <section class="sec-10">
+    <div class="container">
+      <div class="testimonials-grid">
+        <div>
+          <img 
+            src="https://raw.githubusercontent.com/cienpaginas/cuadernos/main/Testimonio1.png" 
+            alt="Testimonio de cliente 1" 
+            class="testimonial-img"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x500/2B5B84/FFFFFF?text=Testimonio+1';"
+          />
+        </div>
+        <div>
+          <img 
+            src="https://raw.githubusercontent.com/cienpaginas/cuadernos/main/Testimonio2.png" 
+            alt="Testimonio de cliente 2" 
+            class="testimonial-img"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x500/2B5B84/FFFFFF?text=Testimonio+2';"
+          />
+        </div>
+        <div>
+          <img 
+            src="https://raw.githubusercontent.com/cienpaginas/cuadernos/main/Testimonio3.png" 
+            alt="Testimonio de cliente 3" 
+            class="testimonial-img"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x500/2B5B84/FFFFFF?text=Testimonio+3';"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 11: Preguntas Frecuentes -->
+  <section class="sec-11">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-accordion">
+        
+        <!-- Elemento 1 -->
+        <details class="faq-item">
+          <summary class="faq-summary">¿Cómo garantizan que el pedido llegue el mismo día a mi casa en Funza?</summary>
+          <div class="faq-content">
+            <p>Contamos con logística local propia dedicada exclusivamente a Funza (Siete Trojes, Zonas Centro y Conjuntos Residenciales). Más de 150 mamás de la zona ya han recibido sus pedidos el mismo día. Si realizas tu pedido antes de las 3:00 PM, nuestro mensajero te contactará por WhatsApp para entregar en la puerta de tu hogar.</p>
+          </div>
+        </details>
+
+        <!-- Elemento 2 -->
+        <details class="faq-item">
+          <summary class="faq-summary">¿Cuáles son los medios de pago disponibles?</summary>
+          <div class="faq-content">
+            <p>Para tu total tranquilidad y comodidad, puedes pagar mediante transferencia instantánea por Nequi, Daviplata o incluso solicitar el pago Contra Entrega en efectivo al recibir tu paquete en Funza.</p>
+          </div>
+        </details>
+
+        <!-- Elemento 3 -->
+        <details class="faq-item">
+          <summary class="faq-summary">¿Qué pasa si a mi hijo no le gustan los diseños o los stickers?</summary>
+          <div class="faq-content">
+            <p>Nuestros diseños han sido testeados previamente con niños entre 6 y 11 años, logrando un 98% de satisfacción y entusiasmo en el unboxing. Además, empacamos cada kit de forma especial como si fuera un regalo, asegurando una experiencia emocionante desde el momento en que abren la caja.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 12: Garantía -->
+  <section class="sec-12">
+    <div class="container">
+      <div class="guarantee-box">
+        <div class="grid-2">
+          <div>
+            <img 
+              src="https://raw.githubusercontent.com/cienpaginas/cuadernos/main/Cuaderno4.jpg" 
+              alt="Garantía Cien Páginas" 
+              class="img-fluid img-card"
+              onerror="this.onerror=null; this.src='https://placehold.co/400x400/7BC6A4/FFFFFF?text=Garantia';"
+            />
+          </div>
+          <div>
+            <h3>Garantía Total "Sonrisas y Calidad" de 7 Días</h3>
+            <p>Estamos tan seguros de la calidad del papel, la resistencia de nuestras pastas y la alegría que este kit le sacará a tu hijo, que asumimos todo el riesgo. Si al recibir tu paquete en Funza sientes que la calidad de los cuadernos o los stickers no supera tus expectativas, simplemente escríbenos a nuestro WhatsApp en los primeros 7 días y te devolvemos el 100% de tu dinero de inmediato, sin preguntas incómodas ni trámites molestos. ¡Tu satisfacción y la felicidad de tus peques están 100% protegidas!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 13: Botón CTA Final -->
+  <section class="sec-13">
+    <div class="container">
+      <a href="https://wa.link/ubh5qc" target="_blank" rel="noopener noreferrer" class="btn-cta">
+        <i class="fa-brands fa-whatsapp" style="margin-right: 10px; font-size: 1.5rem;"></i> ¡QUIERO MI KIT CREATIVO HOY!
+      </a>
+      <div class="footer-text">
+        <p>© Cien Páginas. Todos los derechos reservados. Funza, Cundinamarca.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
